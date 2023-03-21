@@ -1,1 +1,9 @@
+# Project
 .idea
+*.iml
+
+# Pytest
+.pytest_cache
+
+# Python
+venv/
