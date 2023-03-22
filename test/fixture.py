@@ -1,5 +1,6 @@
 import sys
 from io import StringIO
+from main import main
 
 
 def run(input: str) -> str:
@@ -9,7 +10,7 @@ def run(input: str) -> str:
     sys.stdin = StringIO(input)
     try:
         try:
-            import main
+            main()
         except SystemExit:
             pass
         return str(sys.stdout)
