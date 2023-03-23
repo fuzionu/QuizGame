@@ -3,7 +3,7 @@ from test.fixture import run
 
 def test_incorrect_answer_first():
     # given
-    user_input = 'Yes\nDupa\nGraphics Processing unit\nRandom access memory\nPower supply\n'
+    user_input = ['Yes', 'Dupa', 'Graphics Processing unit', 'Random access memory', 'Power supply']
     # when
     program_output = run(user_input)
     # then
@@ -12,7 +12,7 @@ def test_incorrect_answer_first():
 
 def test_incorrect_answer_second():
     # given
-    user_input = 'Yes\nCentral processing unit\nDupa\nRandom access memory\nPower supply\n'
+    user_input = ['Yes', 'Central processing unit', 'Dupa', 'Random access memory', 'Power supply']
     # when
     program_output = run(user_input)
     # then
@@ -21,7 +21,7 @@ def test_incorrect_answer_second():
 
 def test_incorrect_answer_third():
     # given
-    user_input = 'Yes\nCentral processing unit\nGraphics Processing unit\nDupa\nPower supply\n'
+    user_input = ['Yes', 'Central processing unit', 'Graphics Processing unit', 'Dupa', 'Power supply']
     # when
     program_output = run(user_input)
     # then

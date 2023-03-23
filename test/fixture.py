@@ -1,9 +1,17 @@
 import sys
 from io import StringIO
+from typing import Union
+
 from main import main
 
 
-def run(input: str) -> str:
+def run(input: Union[str, list]) -> str:
+    if type(input) == list:
+        return execute("\n".join(input))
+    return execute(input)
+
+
+def execute(input: str) -> str:
     _sys_stdout = sys.stdout
     _sys_stdin = sys.stdin
     sys.stdout = LinesStringIO()
