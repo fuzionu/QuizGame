@@ -6,7 +6,7 @@ def main():
     if playing.lower() != "yes":
         print("Bye...")
 
-    elif playing.lower() == "yes":
+    else:
 
         print("Okay! Let's play :)")
         score = 0
