@@ -7,7 +7,7 @@ def test_incorrect_answer_first():
     # when
     program_output = run(user_input)
     # then
-    assert program_output == "Welcome to my computer quiz!\nDo you want to play? Okay! Let's play :)\nWhat does CPU stand for? Incorrect!\nWhat does GPU stand for? Correct!\nWhat does RAM stand for? Correct!\nWhat does PSU stand for? Correct!\nYou got 3 questions correct\nYou got 75.0% correct\n"
+    assert program_output == answers("Incorrect", "Correct", "Correct", "Correct")
 
 
 def test_incorrect_answer_second():
@@ -16,7 +16,7 @@ def test_incorrect_answer_second():
     # when
     program_output = run(user_input)
     # then
-    assert program_output == "Welcome to my computer quiz!\nDo you want to play? Okay! Let's play :)\nWhat does CPU stand for? Correct!\nWhat does GPU stand for? Incorrect!\nWhat does RAM stand for? Correct!\nWhat does PSU stand for? Correct!\nYou got 3 questions correct\nYou got 75.0% correct\n"
+    assert program_output == answers("Correct", "Incorrect", "Correct", "Correct")
 
 
 def test_incorrect_answer_third():
@@ -25,7 +25,7 @@ def test_incorrect_answer_third():
     # when
     program_output = run(user_input)
     # then
-    assert program_output == "Welcome to my computer quiz!\nDo you want to play? Okay! Let's play :)\nWhat does CPU stand for? Correct!\nWhat does GPU stand for? Correct!\nWhat does RAM stand for? Incorrect!\nWhat does PSU stand for? Correct!\nYou got 3 questions correct\nYou got 75.0% correct\n"
+    assert program_output == answers("Correct", "Correct", "Incorrect", "Correct")
 
 
 def test_incorrect_answer_fourth():
@@ -34,4 +34,16 @@ def test_incorrect_answer_fourth():
     # when
     program_output = run(user_input)
     # then
-    assert program_output == "Welcome to my computer quiz!\nDo you want to play? Okay! Let's play :)\nWhat does CPU stand for? Correct!\nWhat does GPU stand for? Correct!\nWhat does RAM stand for? Correct!\nWhat does PSU stand for? Incorrect!\nYou got 3 questions correct\nYou got 75.0% correct\n"
+    assert program_output == answers("Correct", "Correct", "Correct", "Incorrect")
+
+
+def answers(first: str, second: str, third: str, fourth: str) -> str:
+    return f"""Welcome to my computer quiz!
+Do you want to play? Okay! Let's play :)
+What does CPU stand for? {first}!
+What does GPU stand for? {second}!
+What does RAM stand for? {third}!
+What does PSU stand for? {fourth}!
+You got 3 questions correct
+You got 75.0% correct
+"""
