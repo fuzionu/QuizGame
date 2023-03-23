@@ -8,7 +8,7 @@ def main():
 
 def input_accepted() -> bool:
     response = input("Do you want to play? ")
-    while response == "":
+    while response.strip() == "":
         response = input("")
     return "yes" == response.lower().strip()
 

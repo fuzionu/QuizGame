@@ -17,3 +17,21 @@ def test_accepted_empty_string_many():
     program_output = run(user_input)
     # then
     assert program_output == answers("Correct", "Correct", "Correct", "Correct")
+
+
+def test_accepted_space():
+    # given
+    user_input = ' \nYes\nCentral processing unit\nGraphics Processing unit\nRandom access memory\nPower supply\n'
+    # when
+    program_output = run(user_input)
+    # then
+    assert program_output == answers("Correct", "Correct", "Correct", "Correct")
+
+
+def test_accepted_space_many():
+    # given
+    user_input = '   \nYes\nCentral processing unit\nGraphics Processing unit\nRandom access memory\nPower supply\n'
+    # when
+    program_output = run(user_input)
+    # then
+    assert program_output == answers("Correct", "Correct", "Correct", "Correct")
