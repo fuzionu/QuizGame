@@ -1,4 +1,4 @@
-from test.fixture import run
+from test.fixture import run, answers
 
 
 def test_incorrect_answer_first():
@@ -37,13 +37,3 @@ def test_incorrect_answer_fourth():
     assert program_output == answers("Correct", "Correct", "Correct", "Incorrect")
 
 
-def answers(first: str, second: str, third: str, fourth: str) -> str:
-    return f"""Welcome to my computer quiz!
-Do you want to play? Okay! Let's play :)
-What does CPU stand for? {first}!
-What does GPU stand for? {second}!
-What does RAM stand for? {third}!
-What does PSU stand for? {fourth}!
-You got 3 questions correct
-You got 75.0% correct
-"""

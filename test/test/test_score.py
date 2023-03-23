@@ -1,4 +1,4 @@
-from test.fixture import run
+from test.fixture import run, answers
 
 
 def test_percentage_zero():
@@ -7,7 +7,7 @@ def test_percentage_zero():
     # when
     program_output = run(user_input)
     # then
-    assert program_output == "Welcome to my computer quiz!\nDo you want to play? Okay! Let's play :)\nWhat does CPU stand for? Incorrect!\nWhat does GPU stand for? Incorrect!\nWhat does RAM stand for? Incorrect!\nWhat does PSU stand for? Incorrect!\nYou got 0 questions correct\nYou got 0.0% correct\n"
+    assert program_output == answers("Incorrect", "Incorrect", "Incorrect", "Incorrect")
 
 
 def test_percentage_quarter():
@@ -16,7 +16,7 @@ def test_percentage_quarter():
     # when
     program_output = run(user_input)
     # then
-    assert program_output == "Welcome to my computer quiz!\nDo you want to play? Okay! Let's play :)\nWhat does CPU stand for? Correct!\nWhat does GPU stand for? Incorrect!\nWhat does RAM stand for? Incorrect!\nWhat does PSU stand for? Incorrect!\nYou got 1 questions correct\nYou got 25.0% correct\n"
+    assert program_output == answers("Correct", "Incorrect", "Incorrect", "Incorrect")
 
 
 def test_percentage_half():
@@ -25,7 +25,7 @@ def test_percentage_half():
     # when
     program_output = run(user_input)
     # then
-    assert program_output == "Welcome to my computer quiz!\nDo you want to play? Okay! Let's play :)\nWhat does CPU stand for? Correct!\nWhat does GPU stand for? Correct!\nWhat does RAM stand for? Incorrect!\nWhat does PSU stand for? Incorrect!\nYou got 2 questions correct\nYou got 50.0% correct\n"
+    assert program_output == answers("Correct", "Correct", "Incorrect", "Incorrect")
 
 
 def test_percentage_three_quarters():
@@ -34,7 +34,7 @@ def test_percentage_three_quarters():
     # when
     program_output = run(user_input)
     # then
-    assert program_output == "Welcome to my computer quiz!\nDo you want to play? Okay! Let's play :)\nWhat does CPU stand for? Correct!\nWhat does GPU stand for? Correct!\nWhat does RAM stand for? Correct!\nWhat does PSU stand for? Incorrect!\nYou got 3 questions correct\nYou got 75.0% correct\n"
+    assert program_output == answers("Correct", "Correct", "Correct", "Incorrect")
 
 
 def test_percentage_hundred():
@@ -43,4 +43,4 @@ def test_percentage_hundred():
     # when
     program_output = run(user_input)
     # then
-    assert program_output == "Welcome to my computer quiz!\nDo you want to play? Okay! Let's play :)\nWhat does CPU stand for? Correct!\nWhat does GPU stand for? Correct!\nWhat does RAM stand for? Correct!\nWhat does PSU stand for? Correct!\nYou got 4 questions correct\nYou got 100.0% correct\n"
+    assert program_output == answers("Correct", "Correct", "Correct", "Correct")

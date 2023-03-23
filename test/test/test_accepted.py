@@ -1,4 +1,4 @@
-from test.fixture import run
+from test.fixture import run, answers
 
 
 def test_accepted():
@@ -7,7 +7,7 @@ def test_accepted():
     # when
     program_output = run(user_input)
     # then
-    assert program_output == "Welcome to my computer quiz!\nDo you want to play? Okay! Let's play :)\nWhat does CPU stand for? Correct!\nWhat does GPU stand for? Correct!\nWhat does RAM stand for? Correct!\nWhat does PSU stand for? Correct!\nYou got 4 questions correct\nYou got 100.0% correct\n"
+    assert program_output == answers("Correct", "Correct", "Correct", "Correct")
 
 
 def test_accepted_lowercase():
@@ -16,7 +16,7 @@ def test_accepted_lowercase():
     # when
     program_output = run(user_input)
     # then
-    assert program_output == "Welcome to my computer quiz!\nDo you want to play? Okay! Let's play :)\nWhat does CPU stand for? Correct!\nWhat does GPU stand for? Correct!\nWhat does RAM stand for? Correct!\nWhat does PSU stand for? Correct!\nYou got 4 questions correct\nYou got 100.0% correct\n"
+    assert program_output == answers("Correct", "Correct", "Correct", "Correct")
 
 
 def test_accepted_uppercase():
@@ -25,7 +25,7 @@ def test_accepted_uppercase():
     # when
     program_output = run(user_input)
     # then
-    assert program_output == "Welcome to my computer quiz!\nDo you want to play? Okay! Let's play :)\nWhat does CPU stand for? Correct!\nWhat does GPU stand for? Correct!\nWhat does RAM stand for? Correct!\nWhat does PSU stand for? Correct!\nYou got 4 questions correct\nYou got 100.0% correct\n"
+    assert program_output == answers("Correct", "Correct", "Correct", "Correct")
 
 
 def test_accepted_mixed_case():
@@ -34,4 +34,4 @@ def test_accepted_mixed_case():
     # when
     program_output = run(user_input)
     # then
-    assert program_output == "Welcome to my computer quiz!\nDo you want to play? Okay! Let's play :)\nWhat does CPU stand for? Correct!\nWhat does GPU stand for? Correct!\nWhat does RAM stand for? Correct!\nWhat does PSU stand for? Correct!\nYou got 4 questions correct\nYou got 100.0% correct\n"
+    assert program_output == answers("Correct", "Correct", "Correct", "Correct")
