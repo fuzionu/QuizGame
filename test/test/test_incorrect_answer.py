@@ -35,5 +35,3 @@ def test_incorrect_answer_fourth():
     program_output = run(user_input)
     # then
     assert program_output == answers("Correct", "Correct", "Correct", "Incorrect")
-
-
