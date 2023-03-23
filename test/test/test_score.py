@@ -1,5 +1,4 @@
 from test.fixture import run
-from main import main
 
 
 def test_percentage_zero():
