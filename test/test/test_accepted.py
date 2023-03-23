@@ -35,3 +35,21 @@ def test_accepted_mixed_case():
     program_output = run(user_input)
     # then
     assert program_output == answers("Correct", "Correct", "Correct", "Correct")
+
+
+def test_accepted_space_leading():
+    # given
+    user_input = ' yes\nCentral processing unit\nGraphics Processing unit\nRandom access memory\nPower supply\n'
+    # when
+    program_output = run(user_input)
+    # then
+    assert program_output == answers("Correct", "Correct", "Correct", "Correct")
+
+
+def test_accepted_space_trailing():
+    # given
+    user_input = 'yes \nCentral processing unit\nGraphics Processing unit\nRandom access memory\nPower supply\n'
+    # when
+    program_output = run(user_input)
+    # then
+    assert program_output == answers("Correct", "Correct", "Correct", "Correct")
