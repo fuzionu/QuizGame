@@ -1,50 +1,39 @@
 def main():
     print("Welcome to my computer quiz!")
-
-    playing = input("Do you want to play? ")
-
-    if playing.lower() != "yes":
+    if input_accepted():
+        start_game()
+    else:
         print("Bye...")
 
-    else:
 
-        print("Okay! Let's play :)")
-        score = 0
+def input_accepted() -> bool:
+    response = input("Do you want to play? ")
+    return response.lower() == "yes"
 
-        answer = input("What does CPU stand for? ")
 
-        if answer.lower() == "central processing unit":
+def start_game():
+    print("Okay! Let's play :)")
+    ask_questions({"What does CPU stand for?": "central processing unit",
+                   "What does GPU stand for?": "graphics processing unit",
+                   "What does RAM stand for?": "random access memory",
+                   "What does PSU stand for?": "power supply"})
+
+
+def ask_questions(questions: dict[str]):
+    score = 0
+    for question, answer in questions.items():
+        user_answer = input(question + " ")
+        if user_answer.lower() == answer:
             print("Correct!")
             score += 1
         else:
             print("Incorrect!")
+    print_summary(score)
 
-        answer = input("What does GPU stand for? ")
 
-        if answer.lower() == "graphics processing unit":
-            print("Correct!")
-            score += 1
-        else:
-            print("Incorrect!")
-
-        answer = input("What does RAM stand for? ")
-
-        if answer.lower() == "random access memory":
-            print("Correct!")
-            score += 1
-        else:
-            print("Incorrect!")
-
-        answer = input("What does PSU stand for? ")
-
-        if answer.lower() == "power supply":
-            print("Correct!")
-            score += 1
-        else:
-            print("Incorrect!")
-
-        print("You got " + str(score) + " questions correct")
-        print("You got " + str((score / 4) * 100) + "% correct")
+def print_summary(score: int) -> None:
+    print("You got " + str(score) + " questions correct")
+    print("You got " + str(score / 4 * 100) + "% correct")
 
 
 if __name__ == '__main__':
